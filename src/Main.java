@@ -18,3 +18,36 @@ public class Main {
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+
+                case 1:
+                    conta.exibirSaldo();
+                    break;
+
+                case 2:
+                    System.out.print("Digite o valor para depósito: ");
+                    double deposito = scanner.nextDouble();
+                    conta.depositar(deposito);
+                    break;
+
+                case 3:
+                    System.out.print("Digite o valor para saque: ");
+                    double saque = scanner.nextDouble();
+                    conta.sacar(saque);
+                    break;
+
+                case 0:
+                    System.out.println("Encerrando...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida.");
+            }
+
+        } while (opcao != 0);
+
+        scanner.close();
+    }
+}
